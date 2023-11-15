@@ -1,6 +1,7 @@
 ## Vista Previa:
 
-![Captura1](https://github.com/Freddy4M/proyecto-sap/assets/48028307/eb3538ac-879d-422e-a39c-70aaf6206569)
+![image](https://github.com/Freddy4M/proyecto-sap/assets/48028307/55d75355-e50a-4133-882b-09596301476d)
+
 
 
 ## Creacion del proyecto
