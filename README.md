@@ -23,10 +23,69 @@
 Mas informacion :
 https://github.com/SAP-samples/teched2022-AD280/tree/main/exercises/ex2/ex2.1
 
-## Documentacion del ejercicio:
+## Creación de la lista de items (vista). 
 
-[documentacion.docx](https://github.com/Freddy4M/proyecto-sap/files/13350230/documentacion.docx)
+Link : https://sapui5.hana.ondemand.com/sdk/#/entity/sap.m.FeedListItem/sample/sap.m.sample.FeedListItem/code
 
+![image](https://github.com/Freddy4M/proyecto-sap/assets/48028307/57dd80a6-6802-410a-b1f5-606775b279ce)
+
+Se copia la vista simple.
+y se adapta a los datos que vamos a mostrar, se ha añadido un buscador una separación por grupos de certificado y un botón para imprimir.
+
+```
+<mvc:View
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="tech.app.controller.View1"
+>
+    <Page showHeader="false">
+        <List
+            id="certificado"
+            items="{ path : 'certificado>/', sorter : {  path : 'Grupo',  group : true  } }"
+            headerText="Lista de certificados"
+            growing="true"
+            growingThreshold="4"
+            growingScrollToLoad="false"
+        >
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="{i18n>Listas de Certificados}" />
+                    <ToolbarSpacer />
+                    <SearchField
+                        width="50%"
+                        search=".onFilterInvoices"
+                    />
+                </Toolbar>
+            </headerToolbar>
+            
+            
+            <FeedListItem
+                sender="{certificado>NombCert}"
+                icon="sap-icon://create-session"
+                senderPress="onPress"
+                iconPress="onPress"
+                info=""
+                timestamp="{certificado>FechaCert}"
+                text="{certificado>Descripcion}"
+                convertLinksToAnchorTags="All"
+                actions="print"
+                type="Navigation"
+                        press=".onListItemPressed"
+            >
+                <FeedListItemAction
+                    text="print"
+                    icon="sap-icon://print"
+                    press="print"
+                    
+                />
+            </FeedListItem>
+        </List>
+     <content />
+    </Page>
+</mvc:Vie
+
+```
 
 
 
